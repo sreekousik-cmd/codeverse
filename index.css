@@ -1,0 +1,122 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 222 47% 7%;
+    --foreground: 210 40% 96%;
+    --card: 222 44% 10%;
+    --card-foreground: 210 40% 96%;
+    --popover: 222 46% 9%;
+    --popover-foreground: 210 40% 96%;
+    --primary: 245 86% 68%;
+    --primary-foreground: 222 47% 11%;
+    --secondary: 222 36% 15%;
+    --secondary-foreground: 210 40% 96%;
+    --muted: 222 34% 14%;
+    --muted-foreground: 215 25% 65%;
+    --accent: 258 90% 66%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 84% 70%;
+    --destructive-foreground: 222 47% 11%;
+    --border: 222 30% 19%;
+    --input: 222 30% 19%;
+    --ring: 245 86% 68%;
+    --chart-1: 245 86% 68%;
+    --chart-2: 258 90% 66%;
+    --chart-3: 197 90% 56%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+    --radius: 0.75rem;
+    --font-heading: "Inter", ui-sans-serif, system-ui, sans-serif;
+    --font-body: "Inter", ui-sans-serif, system-ui, sans-serif;
+    --font-display: "Inter", ui-sans-serif, system-ui, sans-serif;
+    --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    --sidebar-background: 222 44% 9%;
+    --sidebar-foreground: 215 25% 78%;
+    --sidebar-primary: 245 86% 68%;
+    --sidebar-primary-foreground: 222 47% 11%;
+    --sidebar-accent: 222 36% 15%;
+    --sidebar-accent-foreground: 210 40% 96%;
+    --sidebar-border: 222 30% 19%;
+    --sidebar-ring: 245 86% 68%;
+  }
+
+  .light {
+    --background: 0 0% 100%;
+    --foreground: 222 47% 11%;
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+    --primary: 245 75% 60%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 222 47% 11%;
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 47%;
+    --accent: 258 80% 60%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 245 75% 60%;
+    --chart-1: 245 75% 60%;
+    --chart-2: 258 80% 60%;
+    --chart-3: 197 90% 45%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 215 16% 47%;
+    --sidebar-primary: 245 75% 60%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 210 40% 96%;
+    --sidebar-accent-foreground: 222 47% 11%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 245 75% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  html {
+    color-scheme: dark;
+  }
+
+  html.light {
+    color-scheme: light;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+  }
+
+  ::selection {
+    background: hsl(var(--primary) / 0.3);
+  }
+}
+
+@layer utilities {
+  .cv-gradient-text {
+    background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent)));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .cv-glow {
+    box-shadow: 0 0 0 1px hsl(var(--primary) / 0.15), 0 8px 40px -12px hsl(var(--primary) / 0.45);
+  }
+
+  .cv-grid-bg {
+    background-image:
+      linear-gradient(hsl(var(--border) / 0.4) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(var(--border) / 0.4) 1px, transparent 1px);
+    background-size: 32px 32px;
+  }
+}
